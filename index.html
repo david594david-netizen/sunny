@@ -19,7 +19,7 @@
         /* 排版與卡片 */
         .dashboard-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 1024px) { .dashboard-grid { grid-template-columns: 1.8fr 1.2fr; } }
-        .card { background: var(--card-background); border-radius: 12px; padding: 20px; border: 1px solid var(--border-color); }
+        .card { background: var(--card-background); border-radius: 12px; padding: 20px; border: 1px solid var(--border-color); margin-bottom: 20px; }
         .card-title { font-size: 1.2rem; color: var(--secondary-color); margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-light); font-weight: bold; }
         .search-box { display: flex; gap: 10px; margin-bottom: 15px; }
         .search-box input, .form-select { flex: 1; padding: 10px 15px; border: 2px solid var(--border-color); border-radius: 8px; outline: none; }
@@ -34,6 +34,7 @@
         .summary-box { background: var(--primary-light); border-radius: 8px; padding: 18px; margin-top: 15px; border: 1px solid #b2dfdb; }
         .summary-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #90a4ae; }
         .warning-alert { background-color: #fdeaea; color: #e74c3c; padding: 12px; border-radius: 8px; margin-top: 15px; font-weight: bold; display: none; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color); color: #7f8c8d; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -111,6 +112,10 @@
                 </div>
             </div>
         </div>
+
+        <footer>
+            © copyright 大衛林 南開科技大學長期照顧與管理系
+        </footer>
     </div>
 
     <script>
