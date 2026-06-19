@@ -9,7 +9,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: "Microsoft JhengHei", sans-serif; background-color: var(--background-color); color: #333; line-height: 1.6; padding: 20px; }
         .main-container { max-width: 900px; margin: 0 auto; }
-        header { background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; margin-bottom: 20px; }
+        header { background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)); color: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
         header h1 { font-size: 3rem; margin-bottom: 8px; }
         
         .nav-tabs { display: flex; gap: 10px; margin-bottom: 20px; background: white; padding: 10px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); overflow-x: auto; }
@@ -17,7 +17,7 @@
         .nav-btn:hover { background: var(--primary-light); color: var(--primary-dark); }
         .nav-btn.active { background: var(--primary-color); color: white; }
 
-        .card { background: var(--card-background); border-radius: 12px; padding: 30px; border: 1px solid var(--border-color); }
+        .card { background: var(--card-background); border-radius: 12px; padding: 30px; border: 1px solid var(--border-color); margin-bottom: 20px; }
         .card-title { font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 10px; border-bottom: 2px solid var(--primary-light); padding-bottom: 10px; font-weight: bold;}
         
         .form-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-top: 20px; }
@@ -32,6 +32,7 @@
         .btn { background-color: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
         .btn-secondary { background-color: #7f8c8d; }
         .output-area { background-color: #f8f9fa; border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; min-height: 200px; white-space: pre-wrap; margin-top: 15px; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color); color: #7f8c8d; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -98,6 +99,10 @@
                 </div>
             </div>
         </div>
+
+        <footer>
+            © copyright 大衛林 南開科技大學長期照顧與管理系
+        </footer>
     </div>
 
     <script>
