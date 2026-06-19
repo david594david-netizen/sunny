@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>撅?????冽雿像??- 蝣澆隞晶</title>
+    <title>居服督導全方位平台 - 碼別介紹</title>
     <style>
         :root { --primary-color: #00796b; --primary-dark: #004d40; --primary-light: #e0f2f1; --secondary-color: #2c3e50; --background-color: #f4f7f6; --card-background: #ffffff; --border-color: #e0e0e0; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,33 +36,33 @@
 <body>
     <div class="main-container">
         <header>
-            <h1>???儭?撠?撅?????冽雿極雿像??/h1>
-            <p>?游??瑞閮祥閰衣??振閮芰??????啣??嚗??撠??踵???/p>
+            <h1>👩‍⚕️ 陽光樂齡居服督導全方位工作平台</h1>
+            <p>整合長照計費試算、家訪紀錄生成與異動通報，提升督導行政效率</p>
         </header>
 
         <nav class="nav-tabs">
-            <a href="index.html" class="nav-btn">? ?瑞閮祥?銵冽</a>
-            <a href="info.html" class="nav-btn active">?? 撅振??蝣澆隞晶</a>
-            <a href="visit.html" class="nav-btn">?? 摰嗉赤蝝???</a>
-            <a href="report.html" class="nav-btn">?? ?啣???Ｙ???/a>
+            <a href="index.html" class="nav-btn">💰 長照計費儀表板</a>
+            <a href="info.html" class="nav-btn active">📖 居家服務碼別介紹</a>
+            <a href="visit.html" class="nav-btn">📝 家訪紀錄生成單</a>
+            <a href="report.html" class="nav-btn">⚠️ 異動通報產生器</a>
                  </nav>
 
         <div class="card">
-            <div class="card-title">?? 撅振??蝣澆摮 (???批捆???嗆閰?</div>
+            <div class="card-title">📖 居家服務碼別字典 (服務內容與限制查詢)</div>
             
             <div class="search-box">
-                <input type="text" id="search-input" placeholder="隢撓?交炬?亥岷??BA 蝣潘?憒?BA01嚗??摮?憒?瘣??瘜?...">
-                <button class="btn-secondary" id="clear-btn">?蔭</button>
+                <input type="text" id="search-input" placeholder="請輸入欲查詢的 BA 碼（如 BA01）或關鍵字（如 洗頭、排泄）...">
+                <button class="btn-secondary" id="clear-btn">重置</button>
             </div>
 
             <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
-                            <th width="10%">BA蝺刻?</th>
-                            <th width="15%">????迂</th>
-                            <th width="35%">???批捆</th>
-                            <th width="40%">????釣????/th>
+                            <th width="10%">BA編號</th>
+                            <th width="15%">服務項目名稱</th>
+                            <th width="35%">服務內容</th>
+                            <th width="40%">服務限制與注意事項</th>
                         </tr>
                     </thead>
                     <tbody id="info-table-body">
@@ -73,27 +73,28 @@
     </div>
 
     <script>
-        // 鞈?靘?嚗??銝?A蝣?docx?遣蝵?        const baInfoData = [
-            { code: 'BA01', name: '?箸頨恍?皜?', content: '璇喲?忽?怨﹝??銝瞉?瘣??瘜皜?蝑?, limit: '??瘥 1 蝯?敹???? 1 蝯? BA07/BA23 ??畾萎??臭蔥?喳?? },
-            { code: 'BA02', name: '?箸?亙虜?折“', content: '蝧餉澈?宏雿?銝????皜???撱??湔?????柴??拍?亦???, limit: '隞?30 ????1 ?桐?嚗??乩???3 撠?? BA22 撌∟?憭?銝??隞?BA 雿萇?? },
-            { code: 'BA03', name: '皜祇??敺菔情', content: '皜祇?????憯?皞怒???賂?敹????, limit: '靘???/?怎??閬??? },
-            { code: 'BA04', name: '??脤?/蝞∠?擗菟?', content: '???今憌?蝞∠???撖???皜???, limit: '???脤??圈?恣??瘙? },
-            { code: 'BA05', name: '擗??折“', content: '?典???????瑁?撱嚗恣?ㄡ憌?鋆賜???, limit: '?虜瘥 1 甈∴?靘摰??恬??? },
-            { code: 'BA07', name: '?瘝絕????, content: '蝛輯銵??/?絕??擃柴?敺???皜???, limit: '??BA01/BA23 ?批捆??????畾萎?敺蔥?喳' },
-            { code: 'BA08', name: '頞喲?扯風', content: '頞曄靽桀?雲?函????靽???閬?頧???, limit: '憭??鈭箏嚗?孵?賢???嗚? },
-            { code: 'BA10', name: '蝧餉澈??', content: '蝧餉澈????????雿矽?氬?, limit: '?隞擃霅瑕?剝?嚗?銝????喳?? },
-            { code: 'BA11', name: '?ａ???瘣餃?', content: '??瘣餃?/隡詨?嚗??蝮柴?, limit: '??隡啣??刻?鈭箏?賢?蝭??? },
-            { code: 'BA12', name: '?銝?銝?璇?, content: '?典?憭?撅斗??銝???, limit: '擃◢?芰憓?賭?鈭銵??憭犖??? },
-            { code: 'BA13', name: '?芸?憭', content: '?芸???郊/瘣餃?蝑??箝?, limit: '頝???閮???刻?隡啜? },
-            { code: 'BA14', name: '?芸?撠梢', content: '?蝘餃???銝??那?芯撈蝑?, limit: '鈭日撘?頝撣豢?閬??? },
-            { code: 'BA15', name: '摰嗅??嚗????暑?湔?賊?嚗?, content: '撅振皜??渡???銵????, limit: '???◤?折“??瘣餌?亦???? },
-            { code: 'BA16', name: '隞?頃/隞??/隞???芰嚗?, content: '隞?頃?暑?抵??誨????辣蝑?, limit: '憭?甈⊥/???摰寥??嗚? },
-            { code: 'BA17', name: '蝞∟楝/撠恣皜??摰?', content: '憒倏蝞～?蝞～鋡?皜??摰?, limit: '????銝?瑁痊蝭??扼? },
-            { code: 'BA18', name: '摰??', content: '撠???韏啣仃蝑◢?芣?靘??函?閬?, limit: '銝?蹂誨?嗡?撖西釭?折“??? },
-            { code: 'BA20', name: '?芯撈??', content: '隢店????隡港???, limit: '銝??潸澈擃憿改??批捆隞仿隡渡銝颯? },
-            { code: 'BA22', name: '撌∟???', content: '?剜??啣?撌∟?摰??瘜?, limit: '?航??典? BA ?剝?嚗?憒?BA02嚗? },
-            { code: 'BA23', name: '?瘣', content: '瘣垣??氬?, limit: '??BA01/BA07 ??????畾萎??臭蔥?喳?? },
-            { code: 'BA24', name: '???', content: '憒???倏???撠輯?皜?蝑?, limit: '??BA01 ?嗆活撌脣??皜?嚗?敺?銴?晞? }
+        // 資料來源：依據您上傳的「BA碼.docx」建置
+        const baInfoData = [
+            { code: 'BA01', name: '基本身體清潔', content: '梳頭、穿脫衣、床上擦澡/洗頭、排泄物清理等。', limit: '原則每日 1 組；必要時早晚各 1 組。與 BA07/BA23 同時段不可併申報。' },
+            { code: 'BA02', name: '基本日常照顧', content: '翻身、移位、上下床、口腔與清潔、如廁/更換、整理床單、協助用藥等。', limit: '以 30 分鐘為 1 單位；每日上限 3 小時。除 BA22 巡視外，不得與其他 BA 併用。' },
+            { code: 'BA03', name: '測量生命徵象', content: '測量與紀錄血壓、體溫、脈搏、呼吸，必要時通報。', limit: '依個案生理/醫療需要安排。' },
+            { code: 'BA04', name: '協助進食/管灌餵食', content: '備餐、餵食或管灌、觀察反應與清理。', limit: '限有進食困難或管灌需求者。' },
+            { code: 'BA05', name: '餐食照顧', content: '在宅備餐、整理餐具與廚房；管灌飲食備製等。', limit: '通常每日 1 次（依核定計畫）。' },
+            { code: 'BA07', name: '協助沐浴及洗頭', content: '穿脫衣、淋/盆浴、洗髮、前後準備與清理。', limit: '與 BA01/BA23 內容重疊時，同時段不得併申報' },
+            { code: 'BA08', name: '足部照護', content: '趾甲修剪、足部皮膚處理/保養、必要時轉介。', limit: '多需合格人員；地方可能另有限制。' },
+            { code: 'BA10', name: '翻身拍背', content: '翻身、拍痰/拍背、體位調整。', limit: '與其他肢體照護可搭配，但不得重複申報。' },
+            { code: 'BA11', name: '肢體關節活動', content: '關節活動/伸展，避免拘縮。', limit: '須評估安全與人員能力範圍。' },
+            { code: 'BA12', name: '協助上/下樓梯', content: '在宅多樓層時協助上下。', limit: '高風險環境可能不予執行或需多人協助。' },
+            { code: 'BA13', name: '陪同外出', content: '陪同散步/活動等外出。', limit: '距離、頻率依計畫與安全評估。' },
+            { code: 'BA14', name: '陪同就醫', content: '協助移動、上下車、候診陪伴等。', limit: '交通方式/距離常有規範。' },
+            { code: 'BA15', name: '家務協助（與個案生活直接相關）', content: '居家清潔整理、洗衣等。', limit: '僅限與被照顧者生活直接相關事項。' },
+            { code: 'BA16', name: '代購/代領/代送（自用）', content: '代購生活物資、代領藥品/文件等。', limit: '多有次數/金額或內容限制。' },
+            { code: 'BA17', name: '管路/導管清潔與固定等', content: '如尿管、胃管、造口袋等清潔、固定。', limit: '需受訓合格且在職責範圍內。' },
+            { code: 'BA18', name: '安全看視', content: '對跌倒/走失等風險提供安全看視。', limit: '不可替代其他實質照顧項目。' },
+            { code: 'BA20', name: '陪伴服務', content: '談話、心理支持、陪伴互動。', limit: '不等於身體照顧，內容以陪伴為主。' },
+            { code: 'BA22', name: '巡視服務', content: '短時到宅巡視安全與狀況。', limit: '可與部分 BA 搭配（例如 BA02）。' },
+            { code: 'BA23', name: '協助洗頭', content: '洗髮與吹整。', limit: '與 BA01/BA07 重疊時，同時段不可併申報。' },
+            { code: 'BA24', name: '協助排泄', content: '如廁協助、尿片更換、導尿袋清理等。', limit: '若 BA01 當次已含排泄清理，不得重複申報。' }
         ];
 
         function initInfo() {
@@ -109,7 +110,7 @@
             const tbody = document.getElementById('info-table-body');
             tbody.innerHTML = '';
             if (data.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #95a5a6; padding: 30px;">?亦蝚血???????/td></tr>`;
+                tbody.innerHTML = `<tr><td colspan="4" style="text-align: center; color: #95a5a6; padding: 30px;">查無符合的服務項目</td></tr>`;
                 return;
             }
             data.forEach(item => {
@@ -118,7 +119,7 @@
                     <td><span class="badge">${item.code}</span></td>
                     <td style="font-weight: bold; color: var(--secondary-color);">${item.name}</td>
                     <td>${item.content}</td>
-                    <td><span class="limit-text">?? ${item.limit}</span></td>
+                    <td><span class="limit-text">⚠️ ${item.limit}</span></td>
                 `;
                 tbody.appendChild(tr);
             });
@@ -139,4 +140,3 @@
     </script>
 </body>
 </html>
-   
