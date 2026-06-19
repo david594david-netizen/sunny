@@ -30,6 +30,7 @@
         th, td { padding: 12px 10px; border-bottom: 1px solid var(--border-color); }
         th { background-color: #f8f9fa; position: sticky; top: 0; }
         .badge { padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: white; background-color: var(--secondary-color); }
+        .badge-red { background-color: #e74c3c; }
         .qty-input { width: 55px; padding: 6px; border: 1px solid var(--border-color); border-radius: 4px; text-align: center; }
         .summary-box { background: var(--primary-light); border-radius: 8px; padding: 18px; margin-top: 15px; border: 1px solid #b2dfdb; }
         .summary-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #90a4ae; }
@@ -163,9 +164,10 @@
                 const isChecked = selectedItems[item.code] !== undefined;
                 const currentQty = isChecked ? selectedItems[item.code] : 1;
                 const tr = document.createElement('tr');
+                const badgeClass = (item.code === 'GA09' || item.code === 'SC09') ? 'badge badge-red' : 'badge';
                 tr.innerHTML = `
                     <td><input type="checkbox" id="chk-${item.code}" ${isChecked ? 'checked' : ''} onchange="toggleSelect('${item.code}', this.checked)"></td>
-                    <td><span class="badge">${item.code}</span></td>
+                    <td><span class="${badgeClass}">${item.code}</span></td>
                     <td>${item.name}</td>
                     <td align="right">$${item.price}</td>
                     <td><input type="number" class="qty-input" min="1" value="${currentQty}" id="qty-${item.code}" onchange="updateQuantity('${item.code}', this.value)"></td>
